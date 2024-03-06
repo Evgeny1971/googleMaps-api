@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "bin/googleMaps-api";
+
+service GameService {
+    rpc CreateGame (CreateGameRequest) returns (CreateGameResponse);
+    rpc AddLocation (AddLocationRequest) returns (AddLocationResponse);
+    rpc RemoveLocation (RemoveLocationRequest) returns (RemoveLocationResponse);
+}
+
+message CreateGameRequest {}
+message CreateGameResponse {}
+
+message AddLocationRequest {}
+message AddLocationResponse {}
+
+message RemoveLocationRequest {}
+message RemoveLocationResponse {}
