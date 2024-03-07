@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"net"
 
 	//"github.com/googlemaps/google-maps-services-go/maps"
 	//"googlemaps.github.io/maps"
@@ -15,6 +16,13 @@ func main() {
 	// Replace "YOUR_API_KEY" with your actual API key
 	apiKey := "AIzaSyBuImtLS1A2933QJOZ-ScwDVeEfDYF9aSw"
 
+	// Use a symbol from the "net" package, for example, Dial
+	conn, err := net.Dial("tcp", "example.com:80")
+	if err != nil {
+		// Handle error
+		return
+	}
+	defer conn.Close()
 	// Create a new client with your API key.
 	client, err := maps.NewClient(maps.WithAPIKey(apiKey))
 	if err != nil {
